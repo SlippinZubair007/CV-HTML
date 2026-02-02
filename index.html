@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Zubair Khan - CV</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Zubair Khan | CV</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body class="light">
+
   <!-- Theme Toggle -->
   <button id="themeToggle" class="theme-btn">🌙</button>
 
-  <header class="header fade-in">
-    <img src="images/profile.jpg" alt="Profile Photo">
+  <!-- Header -->
+  <header class="header reveal">
+    <img src="images/profile.jpg" alt="Muhammad Zubair Khan">
     <h1>Muhammad Zubair Khan</h1>
     <p>BSCS Undergraduate</p>
+
     <button class="download-btn" onclick="downloadCV()">
-        Download CV
+      ⬇ Download CV
     </button>
   </header>
 
-  <section class="fade-in">
+  <!-- About -->
+  <section class="reveal">
     <h2>About Me</h2>
-    <p>I build and ship meaningful software products with a focus on quality, performance, and user experience.</p>
+    <p>
+      I build and ship meaningful software products with a strong focus on
+      clean code, performance, and user experience.
+    </p>
   </section>
 
-  <section class="fade-in">
+  <!-- Education -->
+  <section class="reveal">
     <h2>Education</h2>
-    <p><strong>BSCS</strong> – FAST NUCES (2023–2027)</p>
-    <p><strong>A Levels</strong> – Lahore Grammar School (2021–2023)</p>
-    <p><strong>O Levels</strong> – American Lycetuff School (2019–2021)</p>
+    <ul>
+      <li><strong>BSCS</strong> – FAST NUCES (2023–2027)</li>
+      <li><strong>A Levels</strong> – Lahore Grammar School (2021–2023)</li>
+      <li><strong>O Levels</strong> – American Lycetuff School (2019–2021)</li>
+    </ul>
   </section>
 
-  <section class="fade-in">
+  <!-- Skills -->
+  <section class="reveal">
     <h2>Skills</h2>
     <div class="skills">
       <span>HTML</span>
@@ -44,41 +54,85 @@
     </div>
   </section>
 
-  <section class="fade-in">
+  <!-- Projects -->
+  <section class="reveal">
     <h2>Projects</h2>
 
     <div class="project">
-      <h3>Flareprep</h3>
+      <h3>
+        <a href="https://flareprep.vercel.app" target="_blank">Flareprep ↗</a>
+      </h3>
       <p>AI-powered education platform built for my own startup.</p>
     </div>
 
     <div class="project">
-      <h3>Surfer.AI</h3>
-      <p>Fitness-focused AI web app designed to support my gym journey.</p>
+      <h3>
+        <a href="https://surfer-ai.vercel.app" target="_blank">Surfer.AI ↗</a>
+      </h3>
+      <p>Fitness-focused AI web app to support my gym journey.</p>
     </div>
 
     <div class="project">
-      <h3>LandIT</h3>
+      <h3>
+        <a href="https://github.com/SlippinZubair007" target="_blank">LandIT ↗</a>
+      </h3>
       <p>Career-focused platform to help students become job-ready.</p>
     </div>
   </section>
 
-  <section class="fade-in">
+  <!-- Contact -->
+  <section class="reveal">
     <h2>Contact</h2>
-    <p>Email: detroitzubairkhan123@email.com</p>
-    <p>GitHub: github.com/SlippinZubair007</p>
+
+    <div class="contact-links">
+      <a href="mailto:detroitzubairkhan123@email.com">
+        📧 detroitzubairkhan123@email.com
+      </a>
+
+      <a href="https://github.com/SlippinZubair007" target="_blank">
+        🐙 github.com/SlippinZubair007
+      </a>
+
+      <a href="https://www.linkedin.com" target="_blank">
+        💼 LinkedIn
+      </a>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>© 2026 Muhammad Zubair Khan</p>
   </footer>
 
-  <script src="js/script.js"></script>
-
+  <!-- JS -->
   <script>
-  function downloadCV() {
-  window.print();
-}
+    // Dark / Light Mode
+    const toggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    toggle.addEventListener("click", () => {
+      body.classList.toggle("dark");
+      body.classList.toggle("light");
+      toggle.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
+    });
+
+    // Scroll Reveal Animation
+    const elements = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    });
+
+    elements.forEach(el => observer.observe(el));
+
+    // Download CV
+    function downloadCV() {
+      window.print();
+    }
   </script>
+
 </body>
 </html>
