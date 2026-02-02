@@ -60,21 +60,21 @@
 
     <div class="project">
       <h3>
-        <a href="https://flareprep.vercel.app" target="_blank">Flareprep ↗</a>
+        <a href="https://flareprep.netlify.app" target="_blank">Flareprep ↗</a>
       </h3>
       <p>AI-powered education platform built for my own startup.</p>
     </div>
 
     <div class="project">
       <h3>
-        <a href="https://surfer-ai.vercel.app" target="_blank">Surfer.AI ↗</a>
+        <a href="https://ssurferai.netlify.app/" target="_blank">Surfer.AI ↗</a>
       </h3>
       <p>Fitness-focused AI web app to support my gym journey.</p>
     </div>
 
     <div class="project">
       <h3>
-        <a href="https://github.com/SlippinZubair007" target="_blank">LandIT ↗</a>
+        <a href="https://land-it-az.vercel.app/" target="_blank">LandIT ↗</a>
       </h3>
       <p>Career-focused platform to help students become job-ready.</p>
     </div>
@@ -106,7 +106,6 @@
 
   <!-- JS -->
   <script>
-    // Dark / Light Mode
     const toggle = document.getElementById("themeToggle");
     const body = document.body;
 
@@ -116,7 +115,7 @@
       toggle.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
     });
 
-    // Scroll Reveal Animation
+
     const elements = document.querySelectorAll(".reveal");
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -128,7 +127,6 @@
 
     elements.forEach(el => observer.observe(el));
 
-    // Download CV
     function downloadCV() {
       window.print();
     }
